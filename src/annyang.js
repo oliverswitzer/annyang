@@ -313,6 +313,23 @@
     },
 
     /**
+     * Set a specific grammar that will be commonly used. This feature only works in Chrome/Android.
+     *
+     * @param {SpeechGrammarList} - https://developer.mozilla.org/en-US/docs/Web/API/SpeechGrammarList
+     * @method setGrammar
+     * @see [Grammar](https://developer.mozilla.org/en-US/docs/Web/API/SpeechGrammar#examples)
+     */
+    setGrammar: function(speechGrammarList) {
+      if(window.webkitSpeechGrammarList === undefined) {
+        logMessage("Grammar customization is not supported in the current browser. Please check browser support https://caniuse.com/mdn-api_speechgrammar");
+        return;
+      }
+
+      initIfNeeded();
+      recognition.grammars = speechGrammarList;
+    },
+
+    /**
      * Remove existing commands. Called with a single phrase, an array of phrases, or methodically. Pass no params to remove all commands.
      *
      * #### Examples:

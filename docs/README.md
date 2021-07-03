@@ -92,6 +92,16 @@ See: [Languages](https://github.com/TalAter/annyang/blob/master/docs/FAQ.md#what
 
 * **String** *language* - The language (locale)
 
+## setGrammar(-)
+
+Set a specific grammar that will be commonly used. This feature only works in Chrome/Android.
+
+See: [Grammar](https://developer.mozilla.org/en-US/docs/Web/API/SpeechGrammar#examples)
+
+### Params:
+
+* **SpeechGrammarList** *-* https://developer.mozilla.org/en-US/docs/Web/API/SpeechGrammarList
+
 ## removeCommands([commandsToRemove])
 
 Remove existing commands. Called with a single phrase, an array of phrases, or methodically. Pass no params to remove all commands.
